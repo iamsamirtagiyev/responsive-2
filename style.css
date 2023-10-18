@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #252525;
+    padding: 10px 150px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+}
+
+label ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+label ul li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, .5);
+    transition: all .5s ease;
+}
+
+label ul li a:hover,
+label ul li a.active {
+    color: #fff;
+}
+
+label.menu-2 {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-2 .line {
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    border-radius: 50px;
+    background: #fff;
+    transition: all .5s ease;
+}
+
+.menu-2 .line:first-child {
+    top: -1px;
+}
+
+.menu-2 .line:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-2 .line:last-child {
+    bottom: 0;
+}
+
+input[type="checkbox"]:checked+label .line:first-child {
+    top: 50%;
+    transform: translateY(-50%) rotate(-315deg);
+
+}
+
+input[type="checkbox"]:checked+label .line:nth-child(2) {
+    top: 50%;
+    transform: translate(50px, -50%);
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked+label .line:last-child {
+    top: 50%;
+    transform: translateY(-50%) rotate(315deg);
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px;
+}
+.section-1{
+    width: 80%;
+    background: rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px;
+    border-radius: 10px;
+}
+.section-1 h1{
+    font-size: 50px;
+    text-align: center;
+}
+.section-1 p{
+    font-size: 20px;
+    width: 80%;
+    text-align: center;
+}
+.section-1 button{
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: rgb(3, 103, 235);
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.section-1 button:hover{
+    background: rgb(9, 93, 204);
+}
+.section-2{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+.section-2 .card{
+    position: relative;
+    background: rgba(0, 0, 0, .1);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 500px;
+}
+.section-2 .card h2{
+    text-align: center;
+    margin-top: 30px;
+}
+.section-2 .card p{
+    text-align: center;
+}
+.section-2 .card i{
+    position: absolute;
+    background: rgb(3, 103, 235);
+    font-size: 60px;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    top: -40px;
+}
+footer{
+    width: 100%;
+    background: #252525;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    color: #fff;
+}
+@media(max-width: 990px) {
+    nav {
+        position: relative;
+    }
+
+    .menu-1 {
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        width: 100%;
+        top: -100px;
+        background: #252525;
+        transition: all .5s ease;
+    }
+
+    input[type="checkbox"]:checked~.menu-1 {
+        top: 50px;
+    }
+
+    .menu-1 ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 150px;
+    }
+
+    label.menu-2 {
+        display: flex;
+        transform: scale(.8);
+    }
+    .section-1{
+        width: 90%;
+    }
+}
